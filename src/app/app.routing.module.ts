@@ -7,7 +7,7 @@ import { NotFoundComponent } from './erros/not-found/not-found.component';
 import { ErrosModule } from './erros/erros.module';
 
 const routes: Routes = [
-  {path: 'user/flavio', component: PhotoListComponent},
+  {path: 'user/:userName', component: PhotoListComponent},
   {path: 'photo/add', component: PhotoFormComponent},
   {path: '**', component: NotFoundComponent}
 ];
