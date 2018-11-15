@@ -6,7 +6,8 @@ import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 
 const routes: Routes = [
   {path: 'user/flavio', component: PhotoListComponent},
-  {path: 'photo/add', component: PhotoFormComponent}
+  {path: 'photo/add', component: PhotoFormComponent},
+  {path: '**', component: PhotoListComponent}
 ];
 
 @NgModule({
