@@ -8,4 +8,4 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   declarations: [NotFoundComponent]
 })
-export class ErrosModule { }
+export class ErrorsModule { }
