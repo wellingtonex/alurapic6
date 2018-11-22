@@ -1,14 +1,17 @@
-import { VMessageModule } from './../shared/components/vmessage/vmessage.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SigninComponent } from './signin/signin.component';
+import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { SigninComponent } from './signin/signin.component';
+import { VMessageModule } from './../shared/components/vmessage/vmessage.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    VMessageModule
+    VMessageModule,
+    RouterModule
   ],
   declarations: [
     SigninComponent
