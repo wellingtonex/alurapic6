@@ -8,7 +8,7 @@ const API_URL = 'http://localhost:3000';
 @Injectable({
   providedIn: 'root'
 })
-export class SingupService {
+export class SignupService {
 
   constructor(private httpClient: HttpClient) { }
 

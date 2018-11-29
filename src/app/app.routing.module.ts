@@ -1,4 +1,6 @@
-import { SingupComponent } from './home/singup/singup.component';
+import { SignupComponent } from './home/signup/signup.component';
+
+import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './core/auth/auth-guard';
 import { SigninComponent } from './home/signin/signin.component';
 import { NgModule } from '@angular/core';
@@ -12,12 +14,18 @@ import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 const routes: Routes = [
     {
       path: '',
-      component: SigninComponent,
-      canActivate: [ AuthGuard ]
-    },
-    {
-      path: 'signup',
-      component: SingupComponent
+      component: HomeComponent,
+      canActivate: [ AuthGuard ],
+      children: [
+        {
+          path: '',
+          component: SigninComponent,
+        },
+        {
+          path: 'signup',
+          component: SignupComponent
+        }
+      ]
     },
     {
         path: 'user/:userName',

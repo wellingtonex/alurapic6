@@ -4,8 +4,10 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 import { VMessageModule } from './../shared/components/vmessage/vmessage.module';
-import { SingupComponent } from './singup/singup.component';
+
+import { HomeComponent } from './home.component';
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import { SingupComponent } from './singup/singup.component';
   ],
   declarations: [
     SigninComponent,
-    SingupComponent
+    SignupComponent,
+    HomeComponent
   ]
 })
 export class HomeModule { }

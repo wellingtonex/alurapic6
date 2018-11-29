@@ -1,26 +1,31 @@
+import { PlatformDetectorService } from 'src/app/core/platform-detector/platform-detector.service';
 import { Router } from '@angular/router';
-import { SingupService } from './singup.service';
+import { SignupService } from './singup.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+
+import { NewUser } from './new-user';
 import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
 import { lowerCaseValidator } from 'src/app/shared/validators/loweCaseValidator';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
-import { NewUser } from './new-user';
 
 @Component({
-  templateUrl: './singup.component.html',
+  templateUrl: './signup.component.html'
 })
-export class SingupComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
+  @ViewChild('emailInput') emailInput: ElementRef<HTMLInputElement>;
 
   constructor(
     private formBuilder: FormBuilder,
     private userNotTakenValidatorService: UserNotTakenValidatorService,
-    private signUpService: SingupService,
-    private router: Router
+    private signUpService: SignupService,
+    private router: Router,
+    private platformDetectorService: PlatformDetectorService
   ) { }
 
   ngOnInit() {
+
     const fn = this.userNotTakenValidatorService.checkUserNameTaken();
     this.signupForm = this.formBuilder.group({
       email: ['',
@@ -53,6 +58,10 @@ export class SingupComponent implements OnInit {
         ]
       ]
     });
+
+    if (this.platformDetectorService.isPlatformBrowser()) {
+      this.emailInput.nativeElement.focus();
+    }
   }
 
   signup() {
