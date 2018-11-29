@@ -1,8 +1,4 @@
-import { SignupComponent } from './home/signup/signup.component';
 
-import { HomeComponent } from './home/home.component';
-import { AuthGuard } from './core/auth/auth-guard';
-import { SigninComponent } from './home/signin/signin.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,20 +8,15 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 
 const routes: Routes = [
+
     {
       path: '',
-      component: HomeComponent,
-      canActivate: [ AuthGuard ],
-      children: [
-        {
-          path: '',
-          component: SigninComponent,
-        },
-        {
-          path: 'signup',
-          component: SignupComponent
-        }
-      ]
+      pathMatch: 'full',
+      redirectTo: 'home'
+    },
+    {
+      path: 'home',
+      loadChildren: './home/home.module#HomeModule'
     },
     {
         path: 'user/:userName',
@@ -47,9 +38,9 @@ const routes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(routes)
-        //para utilizar # nas rotas, permitindo maior compatibilidade de browsers que nao
-        //tem suporte a history api
-        //RouterModule.forRoot(routes, { useHash: true })
+        // para utilizar # nas rotas, permitindo maior compatibilidade de browsers que nao
+        // tem suporte a history api
+        // RouterModule.forRoot(routes, { useHash: true })
     ],
     exports: [ RouterModule ]
 })
