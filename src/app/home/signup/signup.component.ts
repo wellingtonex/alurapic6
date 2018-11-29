@@ -9,7 +9,8 @@ import { UserNotTakenValidatorService } from './user-not-taken.validator.service
 import { lowerCaseValidator } from 'src/app/shared/validators/loweCaseValidator';
 
 @Component({
-  templateUrl: './signup.component.html'
+  templateUrl: './signup.component.html',
+  providers: [ UserNotTakenValidatorService ]
 })
 export class SignupComponent implements OnInit {
 

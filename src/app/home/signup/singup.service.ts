@@ -5,9 +5,7 @@ import { Injectable } from '@angular/core';
 const API_URL = 'http://localhost:3000';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SignupService {
 
   constructor(private httpClient: HttpClient) { }
