@@ -47,6 +47,9 @@ const routes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(routes)
+        //para utilizar # nas rotas, permitindo maior compatibilidade de browsers que nao
+        //tem suporte a history api
+        //RouterModule.forRoot(routes, { useHash: true })
     ],
     exports: [ RouterModule ]
 })
