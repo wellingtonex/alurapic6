@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Photo } from "./photo";
+import { Photo } from './photo';
 
 const API = 'http://localhost:3000';
 
@@ -31,4 +31,7 @@ export class PhotoService {
       return this.http.post(API + '/photos/upload', formData);
     }
 
+    findById(id: string) {
+      return this.http.get<Photo>(API + '/photos/' + id);
+    }
 }
