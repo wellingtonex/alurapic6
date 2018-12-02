@@ -7,6 +7,7 @@ import { PhotoModule } from './../photo/photo.module';
 import { PhotoDetailsComponent } from './photo-details.component';
 import { PhotoCommentsComponent } from './photo-comments/photo-comments.component';
 import { VMessageModule } from './../../shared/components/vmessage/vmessage.module';
+import { PhotoOwnerOnlyDirective } from './photo-owner-only/photo-owner-only.directive';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { VMessageModule } from './../../shared/components/vmessage/vmessage.modu
   ],
   declarations: [
     PhotoDetailsComponent,
-    PhotoCommentsComponent
+    PhotoCommentsComponent,
+    PhotoOwnerOnlyDirective
   ],
   exports: [
     PhotoDetailsComponent,
