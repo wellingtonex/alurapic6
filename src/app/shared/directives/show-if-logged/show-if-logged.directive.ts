@@ -1,5 +1,4 @@
 import { UserService } from './../../../core/user/user.service';
-import { Photo } from './../../photo/photo';
 import { Directive, Input, ElementRef, Renderer, OnInit } from '@angular/core';
 
 @Directive({
