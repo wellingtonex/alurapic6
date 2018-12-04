@@ -1,8 +1,10 @@
+import { environment } from './../../../environments/environment';
 import { NewUser } from './new-user';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const API_URL = 'http://localhost:3000';
+
+const API_URL = environment.ApiUrl;
 
 
 @Injectable()
