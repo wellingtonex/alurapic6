@@ -1,8 +1,8 @@
 export class Alert {
 
   constructor(
-    private readonly alterType: AlertType,
-    private readonly message: string
+    public readonly alertType: AlertType,
+    public readonly message: string
   ) {}
 
 }
