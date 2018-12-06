@@ -1,3 +1,4 @@
+import { LoadingModule } from './../../shared/components/loading/loading.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -12,7 +13,8 @@ import { AlertModule } from './../../shared/components/alert/alert.module';
   imports: [
     CommonModule,
     RouterModule,
-    AlertModule
+    AlertModule,
+    LoadingModule
   ],
   declarations: [
     HeaderComponent,
