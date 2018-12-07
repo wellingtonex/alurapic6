@@ -9,6 +9,7 @@ import { HeaderComponent } from '../header/header.component';
 import { RequestInterceptor } from '../auth/request.interceptor';
 import { FooterComponent } from './../footer/footer.component';
 import { AlertModule } from './../../shared/components/alert/alert.module';
+import { ShowIfLoggedModule } from 'src/app/shared/directives/show-if-logged/show-if-logged-module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { AlertModule } from './../../shared/components/alert/alert.module';
     RouterModule,
     AlertModule,
     LoadingModule,
-    MenuModule
+    MenuModule,
+    ShowIfLoggedModule
   ],
   declarations: [
     HeaderComponent,
