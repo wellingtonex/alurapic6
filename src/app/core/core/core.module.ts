@@ -1,3 +1,4 @@
+import { MenuModule } from './../../shared/components/menu/menu.module';
 import { LoadingModule } from './../../shared/components/loading/loading.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -14,7 +15,8 @@ import { AlertModule } from './../../shared/components/alert/alert.module';
     CommonModule,
     RouterModule,
     AlertModule,
-    LoadingModule
+    LoadingModule,
+    MenuModule
   ],
   declarations: [
     HeaderComponent,
