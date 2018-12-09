@@ -7,6 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NewUser } from './new-user';
 import { UserNotTakenValidatorService } from './user-not-taken.validator.service';
 import { lowerCaseValidator } from 'src/app/shared/validators/loweCaseValidator';
+import { userNamePassword } from './username-password-validator';
 
 @Component({
   templateUrl: './signup.component.html',
@@ -58,6 +59,8 @@ export class SignupComponent implements OnInit {
             Validators.maxLength(14)
         ]
       ]
+    }, {
+      validator : userNamePassword
     });
 
     if (this.platformDetectorService.isPlatformBrowser()) {
